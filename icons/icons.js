@@ -11,9 +11,9 @@
       padding: 5px 15px;
       font-size: 14px;
       
-      border-radius: 5px;
+      border-radius: 80px;
 
-      background: rgb(0, 100, 0);
+      background: rgb(0, 0, 0);
       color: white;
 
       display: flex;
@@ -108,17 +108,17 @@
 
           // build html for the category section
           categorySectionHtml += `
-            <div>
+            <div class="gap-m direction-row">
               <!-- Category Label -->
               <div>
-                <h5 id="${categoryName}" class="category-label">${categoryName}</h5>
+                <h5 style="text-transform: capitalize;" id="${categoryName}" class="category-label">${categoryName}</h5>
               </div>
 
               <!-- SVGIcons -->
-              <div>`
+              <div class="gap-l box-l">`
           for (let svgIconName of svgIconNames) {
             categorySectionHtml += `
-                <svg-icon size="12" class="${categoryName}-icon">${categoryName}/${svgIconName}</svg-icon>
+                <svg-icon class="${categoryName}-icon">${categoryName}/${svgIconName}</svg-icon>
               `
           }
           categorySectionHtml += `
@@ -128,19 +128,19 @@
         }
         // append uncategorized svg-icons
         if (uncategorized.length > 0) {
-          let categoryName = 'uncategorized'
+          let categoryName = 'Uncategorized'
           uncategorizedHtml = `
-            <div>
+            <div class="gap-m direction-row">
               <!-- Category Label -->
               <div>
                 <h5 id="${categoryName}" class="category-label">${categoryName}</h5>
               </div>
 
               <!-- SVGIcons -->
-              <div>`
+              <div class="gap-l box-l">`
           for (let i = 0; i < uncategorized.length; i++) {
             uncategorizedHtml += `
-                <svg-icon size="12" class="${categoryName}-icon">${uncategorized[i]}</svg-icon>
+                <svg-icon class="${categoryName}-icon">${uncategorized[i]}</svg-icon>
               `
           }
           uncategorizedHtml += `

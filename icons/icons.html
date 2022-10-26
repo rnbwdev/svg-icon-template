@@ -23,51 +23,52 @@
 
   <body>
     <!-- ******************** container begin ******************** -->
-    <div style="padding: 0px 100px 100px 100px">
-      <!-- Logo -->
-      <div>
-        <svg-icon class="post-icon" size="140">logos/logo</svg-icon>
-      </div>
-
-      <!-- Header -->
-      <div>
-        <!-- Left Panel -->
+    <div class="view align-center">
+      <div class="page">
+        <!-- Logo -->
         <div>
-          <h1>Raincons</h1>
-          <h4>
-            12x12 icons designed for clean, minimal, and info-rich interfaces.
-            By the Rainbow team.
-          </h4>
+          <svg-icon class="post-icon" size="140">logo</svg-icon>
         </div>
-        <!-- Right Panel -->
+
+        <!-- Header -->
+        <div class="box-l  gap-m">
+          <!-- Left Panel -->
+          <div class="box-m direction-row">
+            <h1>Library Name</h1>
+            <h4>
+              Library Description.
+            </h4>
+          </div>
+          <!-- Right Panel -->
+          <div class="box foreground-secondary radius-m padding-l">
+            <div>
+              <svg-icon size="12" class="post-icon">logos/github</svg-icon>
+              <a href="#">View on GitHub</a>
+            </div>
+            <div>
+              <svg-icon size="12" class="post-icon">logos/figma</svg-icon>
+              <a href="#">Open in Figma</a>
+            </div>
+            <div>
+              <svg-icon size="12" class="post-icon">objects/image</svg-icon>
+              <a href="#">Download SVG</a>
+            </div>
+            <div>
+              <svg-icon size="12" class="post-icon">logos/npm</svg-icon>
+              <a href="#">Install with NPM</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Input -->
         <div>
-          <div>
-            <svg-icon size="12" class="post-icon">logos/github</svg-icon>
-            <a href="#">View on GitHub</a>
-          </div>
-          <div>
-            <svg-icon size="12" class="post-icon">logos/figma</svg-icon>
-            <a href="#">Open in Figma</a>
-          </div>
-          <div>
-            <svg-icon size="12" class="post-icon">objects/image</svg-icon>
-            <a href="#">Download SVG</a>
-          </div>
-          <div>
-            <svg-icon size="12" class="post-icon">logos/npm</svg-icon>
-            <a href="#">Install with NPM</a>
-          </div>
+          <input class="border-bottom" style="border-top: none; border-right: none; border-left: none; padding:0;"  id="searchInput" type="text" placeholder="Search" />
         </div>
-      </div>
 
-      <!-- Search Input -->
-      <div>
-        <input id="searchInput" type="text" placeholder="Search" />
-      </div>
-
-      <!-- Content -->
-      <div id="content">
-        <!-- Here, icons.js fetch all of the svg icons from /icons directory -->
+        <!-- Content -->
+        <div id="content" class="gap-xl direction-row">
+          <!-- Here, icons.js fetch all of the svg icons from /icons directory -->
+        </div>
       </div>
     </div>
     <!-- ******************** container end ******************** -->
