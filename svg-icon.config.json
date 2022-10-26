@@ -1,6 +1,5 @@
 {
   "src": "icons",
-  "name": "logos/logo",
-  "size": 24,
-  "color": "black"
+  "name": "logo",
+  "size": 24
 }
