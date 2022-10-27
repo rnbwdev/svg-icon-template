@@ -26,11 +26,13 @@
   // notification appear/disappear timeoutID
   let notificationAppearTimeoutID = null
 
-  // load jquery js
-  let script = document.createElement("SCRIPT")
-  script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
-  script.type = 'text/javascript'
-  document.getElementsByTagName("head")[0].appendChild(script)
+  if (!window.jQuery) {
+    // load jquery js
+    let script = document.createElement("SCRIPT")
+    script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
+    script.type = 'text/javascript'
+    document.getElementsByTagName("head")[0].appendChild(script)
+  }
 
   // poll for jQuery to come into existence
   let checkReady = function (callback) {
@@ -108,45 +110,45 @@
 
           // build html for the category section
           categorySectionHtml += `
-            <div class="gap-m direction-row">
-              <!-- Category Label -->
-              <div>
-                <h5 style="text-transform: capitalize;" id="${categoryName}" class="category-label">${categoryName}</h5>
-              </div>
-
-              <!-- SVGIcons -->
-              <div class="gap-l box-l">`
+              <div class="gap-m direction-row">
+                <!-- Category Label -->
+                <div>
+                  <h5 style="text-transform: capitalize;" id="${categoryName}" class="category-label">${categoryName}</h5>
+                </div>
+  
+                <!-- SVGIcons -->
+                <div class="gap-l box-l">`
           for (let svgIconName of svgIconNames) {
             categorySectionHtml += `
-                <svg-icon class="${categoryName}-icon">${categoryName}/${svgIconName}</svg-icon>
-              `
+                  <svg-icon class="${categoryName}-icon">${categoryName}/${svgIconName}</svg-icon>
+                `
           }
           categorySectionHtml += `
+                </div>
               </div>
-            </div>
-          `
+            `
         }
         // append uncategorized svg-icons
         if (uncategorized.length > 0) {
           let categoryName = 'Uncategorized'
           uncategorizedHtml = `
-            <div class="gap-m direction-row">
-              <!-- Category Label -->
-              <div>
-                <h5 id="${categoryName}" class="category-label">${categoryName}</h5>
-              </div>
-
-              <!-- SVGIcons -->
-              <div class="gap-l box-l">`
+              <div class="gap-m direction-row">
+                <!-- Category Label -->
+                <div>
+                  <h5 id="${categoryName}" class="category-label">${categoryName}</h5>
+                </div>
+  
+                <!-- SVGIcons -->
+                <div class="gap-l box-l">`
           for (let i = 0; i < uncategorized.length; i++) {
             uncategorizedHtml += `
-                <svg-icon class="${categoryName}-icon">${uncategorized[i]}</svg-icon>
-              `
+                  <svg-icon class="${categoryName}-icon">${uncategorized[i]}</svg-icon>
+                `
           }
           uncategorizedHtml += `
+                </div>
               </div>
-            </div>
-          `
+            `
         }
         $('#content').append(uncategorizedHtml + categorySectionHtml)
 
