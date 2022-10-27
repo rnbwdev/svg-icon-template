@@ -40,7 +40,7 @@
   // poll for jQuery to come into existence
   let checkReady = function (callback) {
     if (window.jQuery) {
-      console.log('icons.js load end');
+      console.log('icons.js jquery load end');
       callback(jQuery)
     } else {
       window.setTimeout(function () { checkReady(callback) }, 20)
@@ -234,6 +234,7 @@
         }
         fetchSVGIcons()
       })
+      console.log('icons.js end');
     })
   })
 })()
